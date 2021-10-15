@@ -5,11 +5,17 @@ const initGame = startGame();
 const [name, winningNumber] = initGame;
 let CounterOfCorrectAnswers = initGame.pop();
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 do {
   const number = random(1, 100);
-  const trueAnswer = (number % 2 === 0) ? 'yes' : 'no';
+  let isPrime = true;
+  for (let i = 2; i <= Math.trunc(Math.sqrt(number)); i += 1) {
+    if (number % i === 0) {
+      isPrime = false;
+    }
+  }
+  const trueAnswer = (isPrime && (number !== 1)) ? 'yes' : 'no';
   const Question = String(number);
   const Response = initResponse(Question, trueAnswer);
 
