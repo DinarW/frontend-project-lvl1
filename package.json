@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/DinarW/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DinarW/frontend-project-lvl1/actions)",
   "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/DinarW/frontend-project-lvl1.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "DinarW",
   "license": "ISC",
