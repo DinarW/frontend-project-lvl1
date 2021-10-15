@@ -5,21 +5,29 @@ const initGame = startGame();
 const [name, winningNumber] = initGame;
 let CounterOfCorrectAnswers = initGame.pop();
 
-console.log('Find the greatest common divisor of given numbers.');
+console.log('What number is missing in the progression?');
 
 do {
   let trueAnswer;
-  const firstNumber = random(1, 100);
-  const secondNumber = random(1, 100);
+  const startProg = random(1, 100);
+  const stepProg = random(1, 10);
+  const countElements = random(5, 10);
+  const positionQuestion = random(1, countElements);
+  const progression = [];
+  let count = 1;
 
-  for (let i = Math.min(firstNumber, secondNumber); i >= 1; i -= 1) {
-    if ((firstNumber % i === 0) && (secondNumber % i === 0)) {
+  for (let i = startProg; i <= startProg + stepProg * countElements; i += stepProg) {
+    if (count !== positionQuestion) {
+      progression.push(i);
+      count += 1;
+    } else {
       trueAnswer = i;
-      break;
+      progression.push('..');
+      count += 1;
     }
   }
 
-  const Question = `${firstNumber} ${secondNumber}`;
+  const Question = progression.join(' ');
   const Response = initResponse(Question, trueAnswer);
 
   if (Response) {

@@ -21,4 +21,9 @@ const initResponse = (question, trueAnswer) => {
   return false;
 };
 
-export { startGame, initResponse };
+const random = (min, max) => {
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+};
+
+export { startGame, initResponse, random };

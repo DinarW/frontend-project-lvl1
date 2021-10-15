@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { initResponse, startGame } from '../../src/index.js';
+import { initResponse, random, startGame } from '../../src/index.js';
 
 const initGame = startGame();
 const [name, winningNumber] = initGame;
@@ -10,9 +10,9 @@ console.log('What is the result of the expression?');
 do {
   let sign;
   let trueAnswer;
-  const firstNumber = Math.floor(Math.random() * 100) + 1;
-  const secondNumber = Math.floor(Math.random() * 100) + 1;
-  const randomSign = Math.floor(Math.random() * 3);
+  const firstNumber = random(1, 100);
+  const secondNumber = random(1, 100);
+  const randomSign = random(0, 2);
 
   if (randomSign === 0) {
     sign = ' + ';
