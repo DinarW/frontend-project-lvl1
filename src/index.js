@@ -4,7 +4,8 @@ const startGame = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
-  return name;
+  const initResult = [name, 3, 0];
+  return initResult;
 };
 
 const initResponse = (question, trueAnswer) => {

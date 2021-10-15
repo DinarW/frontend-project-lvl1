@@ -6,6 +6,8 @@ brain-even:
 	node bin/games/brain-even.js
 brain-calc:
 	node bin/games/brain-calc.js
+brain-gsd:
+	node bin/games/brain-gsd.js
 publish:
 	npm publish --dry-run
 lint:

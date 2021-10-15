@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { initResponse, startGame } from '../../src/index.js';
 
-const name = startGame();
-const winningNumber = 3;
-let CounterOfCorrectAnswers = 0;
+const initGame = startGame();
+const [name, winningNumber] = initGame;
+let CounterOfCorrectAnswers = initGame.pop();
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -15,6 +15,10 @@ do {
 
   if (Response) {
     CounterOfCorrectAnswers += 1;
+    if (CounterOfCorrectAnswers === winningNumber) {
+      console.log(`Congratulations, ${name}!`);
+      break;
+    }
   } else {
     console.log(`Let's try again, ${name}!`);
     break;
