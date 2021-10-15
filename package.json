@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/DinarW/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DinarW/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "main": "bin/brain-games.js",
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/DinarW/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/DinarW/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/DinarW/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
