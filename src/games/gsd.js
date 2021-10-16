@@ -27,5 +27,5 @@ const createQuestAnswer = () => {
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-const brainGCD = () => startGame(task, createQuestAnswer);
-export default brainGCD;
+const brainGSD = () => startGame(task, createQuestAnswer);
+export default brainGSD;
