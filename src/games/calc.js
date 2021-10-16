@@ -8,9 +8,10 @@ const brainCalc = () => {
 
   for (let i = 0; i < winningNumber; i += 1) {
     let sign;
-    const firstNumber = random(1, 100);
-    const secondNumber = random(1, 100);
-    const randomSign = random(0, 2);
+    const fromNumber = 0;
+    const firstNumber = random(fromNumber);
+    const secondNumber = random(fromNumber);
+    const randomSign = random(fromNumber, 2);
 
     if (randomSign === 0) {
       sign = ' + ';

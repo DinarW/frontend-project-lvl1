@@ -19,15 +19,16 @@ const sequense = (start, step, count, position) => {
   return [progSequense, answer];
 };
 
-const progression = () => {
+const brainProgression = () => {
   const task = 'What number is missing in the progression?';
   const winningNumber = 3;
   const trueAnswers = [];
   const questions = [];
+  const fromNumber = [];
 
   for (let i = 0; i < winningNumber; i += 1) {
-    const startProg = random(1, 100);
-    const stepProg = random(1, 10);
+    const startProg = random(fromNumber);
+    const stepProg = random(fromNumber, 10);
     const countElements = random(5, 10);
     const positionQuestion = random(1, countElements);
     const [seq, answ] = sequense(startProg, stepProg, countElements, positionQuestion);
@@ -39,4 +40,4 @@ const progression = () => {
   startGame(task, questions, trueAnswers);
 };
 
-export default progression;
+export default brainProgression;

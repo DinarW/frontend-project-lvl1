@@ -21,7 +21,7 @@ const startGame = (task, questions, trueAnswers) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const random = (min, max) => {
+const random = (min, max = 100) => {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 };
