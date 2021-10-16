@@ -28,7 +28,7 @@ const createQuestAnswer = () => {
 
   const [seq, answ] = sequense(startProg, stepProg, countElements, positionQuestion);
   const trueAnswer = answ;
-  const question = seq;
+  const question = seq.join(' ');
 
   return [question, trueAnswer];
 };
