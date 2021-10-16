@@ -1,31 +1,30 @@
 import { random, startGame } from '../index.js';
 
-const brainCalc = () => {
-  const task = 'What is the result of the expression?';
-  const questions = [];
-  const trueAnswers = [];
-  const winningNumber = 3;
+const createQuestAnswer = () => {
+  let sign;
+  const fromNumber = 0;
+  const firstNumber = random(fromNumber);
+  const secondNumber = random(fromNumber);
+  const randomSign = random(fromNumber, 2);
+  let trueAnswer;
 
-  for (let i = 0; i < winningNumber; i += 1) {
-    let sign;
-    const fromNumber = 0;
-    const firstNumber = random(fromNumber);
-    const secondNumber = random(fromNumber);
-    const randomSign = random(fromNumber, 2);
-
-    if (randomSign === 0) {
-      sign = ' + ';
-      trueAnswers.push(firstNumber + secondNumber);
-    } else if (randomSign === 1) {
-      sign = ' - ';
-      trueAnswers.push(firstNumber - secondNumber);
-    } else {
-      sign = ' * ';
-      trueAnswers.push(firstNumber * secondNumber);
-    }
-    questions.push(`${firstNumber}${sign}${secondNumber}`);
+  if (randomSign === 0) {
+    sign = ' + ';
+    trueAnswer = firstNumber + secondNumber;
+  } else if (randomSign === 1) {
+    sign = ' - ';
+    trueAnswer = firstNumber - secondNumber;
+  } else {
+    sign = ' * ';
+    trueAnswer = firstNumber * secondNumber;
   }
-  startGame(task, questions, trueAnswers);
+  const question = `${firstNumber}${sign}${secondNumber}`;
+
+  return [question, trueAnswer];
 };
+
+const task = 'What is the result of the expression?';
+
+const brainCalc = () => startGame(task, createQuestAnswer);
 
 export default brainCalc;

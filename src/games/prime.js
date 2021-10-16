@@ -9,19 +9,17 @@ const isPrime = (num) => {
   return true;
 };
 
-const brainPrime = () => {
-  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const winningNumber = 3;
-  const questions = [];
-  const trueAnswers = [];
+const createQuestAnswer = () => {
   const fromNumber = 0;
+  const number = random(fromNumber);
+  const trueAnswer = (isPrime(number) && (number !== 1)) ? 'yes' : 'no';
+  const question = String(number);
 
-  for (let i = 0; i < winningNumber; i += 1) {
-    const number = random(fromNumber);
-    trueAnswers.push((isPrime(number) && (number !== 1)) ? 'yes' : 'no');
-    questions.push(String(number));
-  }
-  startGame(task, questions, trueAnswers);
+  return [question, trueAnswer];
 };
+
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const brainPrime = () => startGame(task, createQuestAnswer);
 
 export default brainPrime;
