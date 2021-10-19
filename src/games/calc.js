@@ -1,23 +1,24 @@
-import { random, startGame } from '../index.js';
+import { randomNumber, startGame } from '../index.js';
+
+const createAnswer = (firstNumber, secondNumber, sign) => {
+  switch (sign) {
+    case '+':
+      return String(firstNumber + secondNumber);
+    case '-':
+      return String(firstNumber - secondNumber);
+    case '*':
+      return String(firstNumber * secondNumber);
+    default:
+      return null;
+  }
+};
 
 const createQuestAnswer = () => {
-  let sign;
-  const fromNumber = 0;
-  const firstNumber = random(fromNumber);
-  const secondNumber = random(fromNumber);
-  const randomSign = random(fromNumber, 2);
-  let trueAnswer;
-
-  if (randomSign === 0) {
-    sign = ' + ';
-    trueAnswer = firstNumber + secondNumber;
-  } else if (randomSign === 1) {
-    sign = ' - ';
-    trueAnswer = firstNumber - secondNumber;
-  } else {
-    sign = ' * ';
-    trueAnswer = firstNumber * secondNumber;
-  }
+  const firstNumber = randomNumber(0, 100);
+  const secondNumber = randomNumber(0, 100);
+  const signs = ['+', '-', '*'];
+  const sign = signs[randomNumber(0, 2)];
+  const trueAnswer = createAnswer(firstNumber, secondNumber, sign);
   const question = `${firstNumber}${sign}${secondNumber}`;
 
   return [question, trueAnswer];

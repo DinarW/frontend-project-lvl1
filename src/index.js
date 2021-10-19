@@ -6,26 +6,27 @@ const startGame = (task, createQuestAnswer) => {
   console.log(`Hello, ${name}!`);
   console.log(`${task}`);
 
-  const winningNumber = 3;
+  const numberOfRounds = 3;
 
-  for (let i = 0; i < winningNumber; i += 1) {
-    const [question, TrueAnswer] = createQuestAnswer();
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const [question, correctAnswer] = createQuestAnswer();
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === String(TrueAnswer)) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${TrueAnswer}'.`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
 
-const random = (min, max = 100) => {
+const randomNumber = (min, max = 100) => {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 };
 
-export { startGame, random };
+export { startGame, randomNumber };

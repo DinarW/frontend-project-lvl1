@@ -1,9 +1,13 @@
-import { random, startGame } from '../index.js';
+import { randomNumber, startGame } from '../index.js';
+
+const createAnswer = (num) => {
+  const correctAnswer = num % 2 === 0 ? 'yes' : 'no';
+  return correctAnswer;
+};
 
 const createQuestAnswer = () => {
-  const fromNumber = 0;
-  const number = random(fromNumber);
-  const trueAnswer = (number % 2 === 0) ? 'yes' : 'no';
+  const number = randomNumber(0);
+  const trueAnswer = createAnswer(number);
   const question = String(number);
 
   return [question, trueAnswer];

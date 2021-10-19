@@ -1,33 +1,24 @@
-import { startGame, random } from '../index.js';
+import { startGame, randomNumber } from '../index.js';
 
-const sequense = (start, step, count, position) => {
-  const progSequense = [];
-  let nowPosition = 1;
-  let answer;
+const sequenseOfProgression = (start, step, count) => {
+  const progressionSequense = [];
 
   for (let i = start; i <= start + step * count; i += step) {
-    if (nowPosition !== position) {
-      progSequense.push(i);
-      nowPosition += 1;
-    } else {
-      answer = i;
-      progSequense.push('..');
-      nowPosition += 1;
-    }
+    progressionSequense.push(i);
   }
 
-  return [progSequense, answer];
+  return progressionSequense;
 };
 
 const createQuestAnswer = () => {
-  const fromNumber = 0;
-  const startProg = random(fromNumber);
-  const stepProg = random(fromNumber, 10);
-  const countElements = random(5, 10);
-  const positionQuestion = random(1, countElements);
+  const startProg = randomNumber(0);
+  const stepProg = randomNumber(0, 10);
+  const countElements = randomNumber(5, 10);
+  const positionQuestion = randomNumber(0, countElements - 1);
 
-  const [seq, answ] = sequense(startProg, stepProg, countElements, positionQuestion);
-  const trueAnswer = answ;
+  const seq = sequenseOfProgression(startProg, stepProg, countElements);
+  const trueAnswer = String(seq[positionQuestion]);
+  seq[positionQuestion] = '..';
   const question = seq.join(' ');
 
   return [question, trueAnswer];

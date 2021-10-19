@@ -1,4 +1,4 @@
-import { startGame, random } from '../index.js';
+import { startGame, randomNumber } from '../index.js';
 
 const findNOD = (firstNumber, secondNumber) => {
   if (!secondNumber) {
@@ -9,17 +9,9 @@ const findNOD = (firstNumber, secondNumber) => {
 };
 
 const createQuestAnswer = () => {
-  const fromNumber = 0;
-  const firstNumber = random(fromNumber);
-  const secondNumber = random(fromNumber);
-  let trueAnswer;
-
-  if (Math.min(firstNumber, secondNumber) === 0) {
-    trueAnswer = '1';
-  } else {
-    trueAnswer = findNOD(firstNumber, secondNumber);
-  }
-
+  const firstNumber = randomNumber(1);
+  const secondNumber = randomNumber(1);
+  const trueAnswer = String(findNOD(firstNumber, secondNumber));
   const question = `${firstNumber} ${secondNumber}`;
 
   return [question, trueAnswer];

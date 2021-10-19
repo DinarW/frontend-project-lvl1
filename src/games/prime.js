@@ -1,4 +1,4 @@
-import { random, startGame } from '../index.js';
+import { randomNumber, startGame } from '../index.js';
 
 const isPrime = (num) => {
   if (num === 0) {
@@ -14,8 +14,7 @@ const isPrime = (num) => {
 };
 
 const createQuestAnswer = () => {
-  const fromNumber = 0;
-  const number = random(fromNumber);
+  const number = randomNumber(0);
   const trueAnswer = (isPrime(number) && (number !== 1)) ? 'yes' : 'no';
   const question = String(number);
 
