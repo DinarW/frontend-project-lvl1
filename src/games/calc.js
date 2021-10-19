@@ -19,7 +19,7 @@ const createQuestAnswer = () => {
   const signs = ['+', '-', '*'];
   const sign = signs[randomNumber(0, 2)];
   const trueAnswer = createAnswer(firstNumber, secondNumber, sign);
-  const question = `${firstNumber}${sign}${secondNumber}`;
+  const question = `${firstNumber} ${sign} ${secondNumber}`;
 
   return [question, trueAnswer];
 };
