@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/DinarW/frontend-project-lvl1)
 [![Actions Status](https://github.com/DinarW/frontend-project-lvl1/workflows/github-action/badge.svg)](https://github.com/DinarW/frontend-project-lvl1/actions)
 
-<h2>Игра: *"Проверка на чётность"*.</h2>
+<h2>Игра: "Проверка на чётность".</h2>
 Команда для запуска: ```brain-even```
 [![asciicast](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb.svg)](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb)
 
