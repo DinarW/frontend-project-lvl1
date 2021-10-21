@@ -5,7 +5,7 @@
 
 <h2>Игра: "Проверка на чётность".</h2>
 Команда для запуска: 
-```
+```javascript
 brain-even
 ```
 [![asciicast](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb.svg)](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb)
