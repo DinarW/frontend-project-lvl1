@@ -1,20 +1,20 @@
-import { randomNumber, startGame } from '../index.js';
+import { getRandomNumber, startGame } from '../index.js';
 
 const createAnswer = (num) => {
   const correctAnswer = num % 2 === 0 ? 'yes' : 'no';
   return correctAnswer;
 };
 
-const createQuestAnswer = () => {
-  const number = randomNumber(0);
-  const trueAnswer = createAnswer(number);
+const createRound = () => {
+  const number = getRandomNumber(0);
+  const correctAnswer = createAnswer(number);
   const question = String(number);
 
-  return [question, trueAnswer];
+  return [question, correctAnswer];
 };
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const brainEven = () => startGame(task, createQuestAnswer);
+const brainEven = () => startGame(task, createRound);
 
 export default brainEven;

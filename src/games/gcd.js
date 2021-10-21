@@ -1,23 +1,23 @@
-import { startGame, randomNumber } from '../index.js';
+import { startGame, getRandomNumber } from '../index.js';
 
-const findNOD = (firstNumber, secondNumber) => {
+const findGCD = (firstNumber, secondNumber) => {
   if (!secondNumber) {
     return firstNumber;
   }
 
-  return findNOD(secondNumber, firstNumber % secondNumber);
+  return findGCD(secondNumber, firstNumber % secondNumber);
 };
 
-const createQuestAnswer = () => {
-  const firstNumber = randomNumber(1);
-  const secondNumber = randomNumber(1);
-  const trueAnswer = String(findNOD(firstNumber, secondNumber));
+const createRound = () => {
+  const firstNumber = getRandomNumber(1);
+  const secondNumber = getRandomNumber(1);
+  const correctAnswer = String(findGCD(firstNumber, secondNumber));
   const question = `${firstNumber} ${secondNumber}`;
 
-  return [question, trueAnswer];
+  return [question, correctAnswer];
 };
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-const brainGCD = () => startGame(task, createQuestAnswer);
+const brainGCD = () => startGame(task, createRound);
 export default brainGCD;

@@ -1,4 +1,4 @@
-import { startGame, randomNumber } from '../index.js';
+import { startGame, getRandomNumber } from '../index.js';
 
 const sequenseOfProgression = (start, step, count) => {
   const progressionSequense = [];
@@ -10,22 +10,22 @@ const sequenseOfProgression = (start, step, count) => {
   return progressionSequense;
 };
 
-const createQuestAnswer = () => {
-  const startProg = randomNumber(0);
-  const stepProg = randomNumber(0, 10);
-  const countElements = randomNumber(5, 10);
-  const positionQuestion = randomNumber(0, countElements - 1);
+const createRound = () => {
+  const startProg = getRandomNumber(0);
+  const stepProg = getRandomNumber(0, 10);
+  const countElements = getRandomNumber(5, 10);
+  const positionQuestion = getRandomNumber(0, countElements - 1);
 
   const seq = sequenseOfProgression(startProg, stepProg, countElements);
-  const trueAnswer = String(seq[positionQuestion]);
+  const correctAnswer = String(seq[positionQuestion]);
   seq[positionQuestion] = '..';
   const question = seq.join(' ');
 
-  return [question, trueAnswer];
+  return [question, correctAnswer];
 };
 
 const task = 'What number is missing in the progression?';
 
-const brainProgression = () => startGame(task, createQuestAnswer);
+const brainProgression = () => startGame(task, createRound);
 
 export default brainProgression;

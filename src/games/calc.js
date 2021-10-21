@@ -1,4 +1,4 @@
-import { randomNumber, startGame } from '../index.js';
+import { getRandomNumber, startGame } from '../index.js';
 
 const createAnswer = (firstNumber, secondNumber, sign) => {
   switch (sign) {
@@ -13,19 +13,19 @@ const createAnswer = (firstNumber, secondNumber, sign) => {
   }
 };
 
-const createQuestAnswer = () => {
-  const firstNumber = randomNumber(0, 100);
-  const secondNumber = randomNumber(0, 100);
+const createRound = () => {
+  const firstNumber = getRandomNumber(0, 100);
+  const secondNumber = getRandomNumber(0, 100);
   const signs = ['+', '-', '*'];
-  const sign = signs[randomNumber(0, 2)];
-  const trueAnswer = createAnswer(firstNumber, secondNumber, sign);
+  const sign = signs[getRandomNumber(0, 2)];
+  const correctAnswer = createAnswer(firstNumber, secondNumber, sign);
   const question = `${firstNumber} ${sign} ${secondNumber}`;
 
-  return [question, trueAnswer];
+  return [question, correctAnswer];
 };
 
 const task = 'What is the result of the expression?';
 
-const brainCalc = () => startGame(task, createQuestAnswer);
+const brainCalc = () => startGame(task, createRound);
 
 export default brainCalc;

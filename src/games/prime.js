@@ -1,11 +1,11 @@
-import { randomNumber, startGame } from '../index.js';
+import { getRandomNumber, startGame } from '../index.js';
 
 const isPrime = (num) => {
-  if (num === 0) {
+  if ((num === 0) || (num === 1)) {
     return false;
   }
 
-  for (let i = 2; i <= Math.trunc(Math.sqrt(num)); i += 1) {
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -13,16 +13,16 @@ const isPrime = (num) => {
   return true;
 };
 
-const createQuestAnswer = () => {
-  const number = randomNumber(0);
-  const trueAnswer = (isPrime(number) && (number !== 1)) ? 'yes' : 'no';
+const createRound = () => {
+  const number = getRandomNumber(0);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
   const question = String(number);
 
-  return [question, trueAnswer];
+  return [question, correctAnswer];
 };
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const brainPrime = () => startGame(task, createQuestAnswer);
+const brainPrime = () => startGame(task, createRound);
 
 export default brainPrime;
