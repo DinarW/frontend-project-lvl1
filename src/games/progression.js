@@ -2,9 +2,10 @@ import { startGame, getRandomNumber } from '../index.js';
 
 const sequenseOfProgression = (start, step, count) => {
   const progressionSequense = [];
-
-  for (let i = start; i <= start + step * (count - 1); i += step) {
-    progressionSequense.push(i);
+  let startProgression = start;
+  for (let i = 0; i <= count; i += 1) {
+    progressionSequense.push(startProgression);
+    startProgression += step;
   }
 
   return progressionSequense;
@@ -12,7 +13,7 @@ const sequenseOfProgression = (start, step, count) => {
 
 const createRound = () => {
   const startProg = getRandomNumber(0);
-  const stepProg = getRandomNumber(0, 10);
+  const stepProg = getRandomNumber(1, 10);
   const countElements = getRandomNumber(5, 10);
   const positionQuestion = getRandomNumber(0, countElements - 1);
 
