@@ -2,10 +2,8 @@ import { startGame, getRandomNumber } from '../index.js';
 
 const sequenseOfProgression = (start, step, count) => {
   const progressionSequense = [];
-  let startProgression = start;
   for (let i = 0; i <= count; i += 1) {
-    progressionSequense.push(startProgression);
-    startProgression += step;
+    progressionSequense.push(start + step * i);
   }
 
   return progressionSequense;

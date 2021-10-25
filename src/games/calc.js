@@ -1,6 +1,6 @@
 import { getRandomNumber, startGame } from '../index.js';
 
-const createAnswer = (firstNumber, secondNumber, sign) => {
+const calculateAnswer = (firstNumber, secondNumber, sign) => {
   switch (sign) {
     case '+':
       return String(firstNumber + secondNumber);
@@ -17,8 +17,8 @@ const createRound = () => {
   const firstNumber = getRandomNumber(0, 100);
   const secondNumber = getRandomNumber(0, 100);
   const signs = ['+', '-', '*'];
-  const sign = signs[getRandomNumber(0, 2)];
-  const correctAnswer = createAnswer(firstNumber, secondNumber, sign);
+  const sign = signs[getRandomNumber(0, signs.length - 1)];
+  const correctAnswer = calculateAnswer(firstNumber, secondNumber, sign);
   const question = `${firstNumber} ${sign} ${secondNumber}`;
 
   return [question, correctAnswer];

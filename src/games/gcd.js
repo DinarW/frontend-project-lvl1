@@ -1,12 +1,6 @@
 import { startGame, getRandomNumber } from '../index.js';
 
-const findGCD = (firstNumber, secondNumber) => {
-  if (!secondNumber) {
-    return firstNumber;
-  }
-
-  return findGCD(secondNumber, firstNumber % secondNumber);
-};
+const findGCD = (numOne, numTwo) => ((!numTwo) ? numOne : findGCD(numTwo, numOne % numTwo));
 
 const createRound = () => {
   const firstNumber = getRandomNumber(1);

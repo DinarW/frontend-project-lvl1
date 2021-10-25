@@ -1,13 +1,10 @@
 import { getRandomNumber, startGame } from '../index.js';
 
-const createAnswer = (num) => {
-  const correctAnswer = num % 2 === 0 ? 'yes' : 'no';
-  return correctAnswer;
-};
+const isEven = (num) => num % 2 === 0;
 
 const createRound = () => {
   const number = getRandomNumber(0);
-  const correctAnswer = createAnswer(number);
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = String(number);
 
   return [question, correctAnswer];
