@@ -7,28 +7,28 @@
 
 Команда для запуска: `brain-even`
 
-[![asciicast](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb.svg)](https://asciinema.org/a/7XI1Tq4Uwo0PYk2XWFv0FGvEb)
+[![asciicast](https://asciinema.org/a/yEq5dKJmcvqWEZek7uFj77bFn.svg)](https://asciinema.org/a/yEq5dKJmcvqWEZek7uFj77bFn)
 
 <h2>Игра: "Калькулятор".</h2>
 
 Команда для запуска: `brain-calc`
 
-[![asciicast](https://asciinema.org/a/JPL1yBU9M2KNdPaZ6o93sPabm.svg)](https://asciinema.org/a/JPL1yBU9M2KNdPaZ6o93sPabm)
+[![asciicast](https://asciinema.org/a/WFa2yIh0yqLc54A11oAXtv7m4.svg)](https://asciinema.org/a/WFa2yIh0yqLc54A11oAXtv7m4)
 
 <h2>Игра "НОД".</h2>
 
 Команда для запуска: `brain-gcd`
 
-[![asciicast](https://asciinema.org/a/kYdiidibMrbO45mwpZtFYjGVh.svg)](https://asciinema.org/a/kYdiidibMrbO45mwpZtFYjGVh)
+[![asciicast](https://asciinema.org/a/vPZDaSx5lfn6203Q22qqax8Is.svg)](https://asciinema.org/a/vPZDaSx5lfn6203Q22qqax8Is)
 
 <h2>Игра "Простое ли число?".</h2>
 
 Команда для запуска: `brain-prime`
 
-[![asciicast](https://asciinema.org/a/sKHCyFbZlv8zswL82EfS5LXR5.svg)](https://asciinema.org/a/sKHCyFbZlv8zswL82EfS5LXR5)
+[![asciicast](https://asciinema.org/a/NSxn7Vfz8UdJlOapqbrrN1s6J.svg)](https://asciinema.org/a/NSxn7Vfz8UdJlOapqbrrN1s6J)
 
 <h2>Игра "Арифметическая прогрессия".</h2>
 
 Команда для запуска: `brain-progression`
 
-[![asciicast](https://asciinema.org/a/wGfEZYfuSUiu5nLTxHz8KCJPZ.svg)](https://asciinema.org/a/wGfEZYfuSUiu5nLTxHz8KCJPZ)
+[![asciicast](https://asciinema.org/a/CCe6R2i4xEoimKqthql1eUVks.svg)](https://asciinema.org/a/CCe6R2i4xEoimKqthql1eUVks)

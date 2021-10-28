@@ -1,4 +1,5 @@
-import { getRandomNumber, startGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const calculateAnswer = (firstNumber, secondNumber, sign) => {
   switch (sign) {
@@ -26,6 +27,6 @@ const createRound = () => {
 
 const task = 'What is the result of the expression?';
 
-const brainCalc = () => startGame(task, createRound);
+const brainCalc = () => playGame(task, createRound);
 
 export default brainCalc;

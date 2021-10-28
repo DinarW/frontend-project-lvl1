@@ -1,4 +1,5 @@
-import { getRandomNumber, startGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const isEven = (num) => num % 2 === 0;
 
@@ -12,6 +13,6 @@ const createRound = () => {
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const brainEven = () => startGame(task, createRound);
+const brainEven = () => playGame(task, createRound);
 
 export default brainEven;
